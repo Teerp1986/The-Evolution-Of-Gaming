@@ -47,9 +47,9 @@ CREATE TABLE `gamesales` (
   `Year` int DEFAULT NULL,
   `Genre` text COLLATE utf8mb4_unicode_ci,
   `Publisher` text COLLATE utf8mb4_unicode_ci,
-  `NA_Sales` double DEFAULT NULL,
-  `EU_Sales` double DEFAULT NULL,
-  `JP_Sales` double DEFAULT NULL,
+  `North America_Sales` double DEFAULT NULL,
+  `Europe_Sales` double DEFAULT NULL,
+  `Japan_Sales` double DEFAULT NULL,
   `Other_Sales` double DEFAULT NULL,
   `Global_Sales` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
