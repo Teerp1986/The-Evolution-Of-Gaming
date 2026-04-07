@@ -1,4 +1,4 @@
-How to Run this Project
+How to Run this Project using cvs files:
 
 Running the project from CSV involves four major steps:
     1. Set up your environment (Python, virtual environment, dependencies).
@@ -23,7 +23,7 @@ pip install pandas matplotlib seaborn numpy jupyter
 
 
 2. Load CSV Files Instead of SQL
-Inside your notebook (evolution.ipynb):
+Inside your notebook (csv_version.ipynb):
 
 import pandas as pd
 
