@@ -22,11 +22,10 @@ The project uses a diverse set of chart types to communicate different aspects o
 
 - Clustered Bar Charts for comparing categories across regions or decades.
 - Line Plots to show changes over time.
-- Scatter Plots to explore relationships between variables.
 - Histograms to examine distribution patterns.
 - Pie Charts for proportional comparisons across regions.
 - Heatmaps to highlight high‑revenue titles or correlations.
-- Ribbon Charts / Stacked Area Charts for decade‑level platform popularity.
+
 Each visualization is designed with consistent formatting, color harmony, and readability in mind.
 
 
