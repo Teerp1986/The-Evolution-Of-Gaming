@@ -63,7 +63,7 @@ venv\Scripts\activate
 pip install pandas matplotlib seaborn numpy jupyter
 
 
-
+Use the notebook named "gamevolve_csv_version.ipynb". This project version is coded to use csv files.files.
 
     2. Load CSV Files Instead of SQL
 Inside your notebook (evolution.ipynb):
@@ -72,7 +72,10 @@ import pandas as pd
 
 df = pd.read_csv("../Data/dagevolve_full.csv")
 df_consoles = pd.read_csv("../Data/gameconsoles.csv")
-df_sales = pd.read_csv("../Data/vgsales.csv")
+df_sales = pd.read_csv("../Data/gamesales.csv")
+
+If you run into an issue loding in csv file use fullpath e.g file_path = r"C:\Users\Tonika Price\Source\Repos\EvolutionOfGaming\Data\Dagevolve_full.csv" 
+ or # update path if needed.
 
 If your CSVs have encoding issues:
 df = pd.read_csv("../Data/dagevolve_full.csv", encoding="latin1") 
