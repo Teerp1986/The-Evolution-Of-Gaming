@@ -36,6 +36,19 @@ The project uses a diverse set of chart types to communicate different aspects o
 
 Each visualization is designed with consistent formatting, color harmony, and readability in mind.
 
+### Some unique, custom Python functions that serve a clear purpose or automate repetitive tasks:
+
+    1. validate_columns()
+- Stops your workflow from breaking mid‑analysis
+- Gives clean, readable error messages
+- Perfect for reproducible pipeline
+
+        2. load_sql_to_df()
+- Run SQL and return a clean DataFrame. 
+- This is a  reusable function that keeps your notebook clean and eliminates repeated boilerplate.
+
+        3. Quickly profile missing data
+- Instantly see which columns need cleaning.
 
 
 
