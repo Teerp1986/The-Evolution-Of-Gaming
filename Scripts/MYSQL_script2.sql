@@ -19,8 +19,8 @@ SELECT
     gc.`Units sold (million)` AS Console_Units_Sold,
     gc.Remarks AS Console_Remarks
 
-FROM gamesales gs
-LEFT JOIN gameconsoles gc
+FROM gamesales gs -- You can change this to SELECT gs.* if you want all columns from gamesales without renaming
+LEFT JOIN gameconsoles gc -- You can change this to SELECT gc.* if you want all columns from gameconsoles without renaming
     ON gs.Console = gc.`Console Name`
 
 

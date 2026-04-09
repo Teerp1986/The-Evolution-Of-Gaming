@@ -2,14 +2,14 @@
 
 # Evolution Of Gaming
 
-This project analyzes the video game industry to uncover patterns in game sales, profitability, release trends, genre popularity, and company performance over time. I selected this dataset because video games have been a personal passion since childhood, and the industry itself has significantly shaped global entertainment, created employment opportunities, and generated major economic impact for over 50 years. By examining industry data, the project aims to better understand how gaming continues to evolve and what factors drive success in this highly competitive market.
+## This project analyzes the video game industry to uncover patterns in game sales, profitability, release trends, genre popularity, and company performance over time. I selected this dataset because video games have been a personal passion since childhood, and the industry itself has significantly shaped global entertainment, created employment opportunities, and generated major economic impact for over 50 years. By examining industry data, the project aims to better understand how gaming continues to evolve and what factors drive success in this highly competitive market.
 
-The visualizations and SQL exploration in this project reveal several meaningful patterns about the evolution of the gaming industry. By combining structured database queries with polished analytical charts, the project uncovers trends in platform dominance, genre performance, and global sales behavior across decades. These findings form the narrative backbone of the analysis and highlight how the industry has shifted in response to technology, consumer preferences, and market expansion.
+### The visualizations and SQL exploration in this project reveal several meaningful patterns about the evolution of the gaming industry. By combining structured database queries with polished analytical charts, the project uncovers trends in platform dominance, genre performance, and global sales behavior across decades. These findings form the narrative backbone of the analysis and highlight how the industry has shifted in response to technology, consumer preferences, and market expansion.
 
-Data Visualization
+### Data Visualization
 This project includes a series of visualizations designed to highlight trends, comparisons, and patterns within the global video‑game market. Each chart is generated from the cleaned MySQL dataset and follows a consistent visual style to support clarity, accessibility, and presentation‑ready storytelling.
 
-Visualization Goals
+### Visualization Goals
 The visualizations in this project are built to support three core analytical goals:
 
 - Identify high‑level trends such as platform popularity, regional sales patterns, and decade‑level shifts.
@@ -17,7 +17,7 @@ The visualizations in this project are built to support three core analytical go
 - Reveal relationships through scatter plots, line charts, and correlation‑based visuals.
 These visuals form the analytical backbone of the project, helping translate raw data into insights that are easy to interpret and present.
 
-Visualization Types Included
+### Visualization Types Included
 The project uses a diverse set of chart types to communicate different aspects of the data effectively:
 
 - Global Highest Grossing Genre as of 2020 - Verticle Bar Chart
@@ -39,14 +39,16 @@ Each visualization is designed with consistent formatting, color harmony, and re
 
 
 
-Overview of the Workflow
+### Overview of the Workflow
 Running the project from CSV involves four major steps:
+
     1. Set up your environment (Python, virtual environment, dependencies).
     2. Organize your project folder so notebooks and CSVs load cleanly.
     3. Load CSVs into pandas instead of querying MySQL.
     4. Run your analysis + visualizations exactly as before.
 
-1. Environment Setup on Windows 11
+
+    1. Environment Setup on Windows 11
 Install Python (if not installed)
 Download from: https://www.python.org/downloads/windows/
 During installation:
@@ -62,7 +64,8 @@ pip install pandas matplotlib seaborn numpy jupyter
 
 
 
-2. Load CSV Files Instead of SQL
+
+    2. Load CSV Files Instead of SQL
 Inside your notebook (evolution.ipynb):
 
 import pandas as pd
@@ -75,8 +78,7 @@ If your CSVs have encoding issues:
 df = pd.read_csv("../Data/dagevolve_full.csv", encoding="latin1") 
 
 
-
-3. Replace SQL Queries with Pandas Equivalents
+    3. Replace SQL Queries with Pandas Equivalents
 Example: SQL GROUP BY → pandas groupby
 SQL version:
 
@@ -103,8 +105,8 @@ pivot_df = df_consoles.pivot_table(
 )
 
 
-4. Run All Visualizations Normally
-All your charts—bar charts, stacked bars, pie charts, decade trends—work exactly the same.
+    4. Run All Visualizations Normally
+All your charts—bar charts, stacked bars, pie charts, decade trends—work exactly the same.##
 
 Example:
 import matplotlib.pyplot as plt
@@ -116,7 +118,7 @@ plt.show()
 
 Your existing visualization code can be reused with zero changes as long as the DataFrame names match.
 
-5. Run the Notebook
+    5. Run the Notebook
 jupyter notebook
 notebooks/dagevolve.ipynb
 
@@ -128,7 +130,7 @@ df.columns = df.columns.str.strip() df = df.drop_duplicates() df = df.fillna(0)
 To convert numeric columns:
 df["Global_Sales"] = pd.to_numeric(df["Global_Sales"], errors="coerce") 
 
- Ready to Run the Full Project
+    Ready to Run the Full Project
 You  have a complete CSV‑based workflow that:
     • avoids MySQL entirely
     • keeps your analysis reproducible

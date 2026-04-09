@@ -1,8 +1,8 @@
-CREATE TABLE MERGED GAME DATA
+CREATE TABLE MERGED GAME DATA  # This SQL code creates a new table called "merged_game_data" by performing a LEFT JOIN between the "gamesales" and "gameconsoles" tables based on the console name. The resulting table includes various columns from both tables, such as game information (name, console, release year, genre, company, sales) and console information (type, company, release year, discontinuation year, units sold, remarks).
  CREATE TABLE merged_game_data AS
  SELECT 
-     -- Game info
-     gs.Name AS Game_Name,
+     -- Game info # (you can select specific columns or use gs.* to select all)
+     gs.Name AS Game_Name, #    Renaming for clarity
      gs.Console AS Console_Name,
      gs.Year AS Game_Release_Year,
      gs.Genre,
