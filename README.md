@@ -1,4 +1,6 @@
-![alt text](image.png)
+<p align="center">
+  <img src="Visuals - Charts/Gaming_Revenue.png" width="600">
+</p>
 
 # Evolution Of Gaming
 
