@@ -39,7 +39,7 @@ Each visualization is designed with consistent formatting, color harmony, and re
 
 
 
-### Overview of the Workflow
+## Overview of the Workflow
 Running the project from CSV involves four major steps:
 
     1. Set up your environment (Python, virtual environment, dependencies).
