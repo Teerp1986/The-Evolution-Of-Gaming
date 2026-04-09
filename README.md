@@ -47,7 +47,7 @@ Create a virtual environment
 
 Open Windows Terminal or PowerShell:
 cd path\to\EvolutionOfGaming
-python -m venv venv
+python -m venv
 venv\Scripts\activate
 
 pip install pandas matplotlib seaborn numpy jupyter
