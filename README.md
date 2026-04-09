@@ -20,11 +20,19 @@ These visuals form the analytical backbone of the project, helping translate raw
 Visualization Types Included
 The project uses a diverse set of chart types to communicate different aspects of the data effectively:
 
-- Clustered Bar Charts for comparing categories across regions or decades.
-- Line Plots to show changes over time.
-- Histograms to examine distribution patterns.
-- Pie Charts for proportional comparisons across regions.
-- Heatmaps to highlight high‑revenue titles or correlations.
+- Global Highest Grossing Genre as of 2020 - Verticle Bar Chart
+
+- Top 10 Highest Grossing Game Companies Globally - Horizontal Bar Chart
+
+- Top 10 Region Consoles Sales as of 2020 - Stacked Bar Chart
+
+- Top 10 Global Console Sales as of 2020 - Line Plot Chart
+
+- Lowest Gaming Revenue by Region through 2020 - Pie Chart
+
+- Top 10 Console Companies by Units Sold since 1980" - Horizontal Bar Chart
+
+- Most Popular Console Types by Decade - Histograph
 
 Each visualization is designed with consistent formatting, color harmony, and readability in mind.
 
