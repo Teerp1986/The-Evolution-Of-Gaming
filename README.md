@@ -2,41 +2,40 @@
 
 # Evolution Of Gaming
 
-## This project analyzes the video game industry to uncover patterns in game sales, profitability, release trends, genre popularity, and company performance over time. I selected this dataset because video games have been a personal passion since childhood, and the industry itself has significantly shaped global entertainment, created employment opportunities, and generated major economic impact for over 50 years. By examining industry data, the project aims to better understand how gaming continues to evolve and what factors drive success in this highly competitive market.
+## Overview
+This project analyzes the video‑game industry to uncover long‑term patterns in global sales, profitability, release trends, genre popularity, and company performance. Video games have shaped global entertainment for over 50 years, influencing culture, technology, and the economy. By examining industry data, this project highlights how gaming continues to evolve and what factors drive success in a competitive market.
 
-### The visualizations and SQL exploration in this project reveal several meaningful patterns about the evolution of the gaming industry. By combining structured database queries with polished analytical charts, the project uncovers trends in platform dominance, genre performance, and global sales behavior across decades. These findings form the narrative backbone of the analysis and highlight how the industry has shifted in response to technology, consumer preferences, and market expansion.
+The analysis combines SQL exploration, Python‑based data visualization, and cleaned CSV workflows to reveal meaningful insights into platform dominance, genre performance, and global sales behavior across decades.
 
-### Data Visualization
-This project includes a series of visualizations designed to highlight trends, comparisons, and patterns within the global video‑game market. Each chart is generated from the cleaned MySQL dataset and follows a consistent visual style to support clarity, accessibility, and presentation‑ready storytelling.
+### Insights & Analytical Focus
+The project uses structured database queries and polished visualizations to uncover:
+- Shifts in platform and console dominance.
+- Genre‑level performance and global sales trends
+- Regional differences in gaming markets
+- Decade‑by‑decade changes in consumer preferences
+- Company‑level performance and long‑term market impact
 
-### Visualization Goals
-The visualizations in this project are built to support three core analytical goals:
+## Data Visualization
 
-- Identify high‑level trends such as platform popularity, regional sales patterns, and decade‑level shifts.
-- Compare categories including genres, publishers, platforms, and device types.
-- Reveal relationships through scatter plots, line charts, and correlation‑based visuals.
-These visuals form the analytical backbone of the project, helping translate raw data into insights that are easy to interpret and present.
+### My Visualization Goals
+The visualizations support three core analytical goals:
+
+- Identify high‑level trends (platform popularity, regional sales patterns, decade shifts)
+- Compare categories (genres, publishers, platforms, device types)
+- Reveal relationships (scatter plots, line charts, correlations)
 
 ### Visualization Types Included
-The project uses a diverse set of chart types to communicate different aspects of the data effectively:
+- Global Highest‑Grossing Genre (2020) — Vertical Bar Chart
+- Top 10 Highest‑Grossing Game Companies — Horizontal Bar Chart
+- Top 10 Regional Console Sales (2020) — Stacked Bar Chart
+- Top 10 Global Console Sales (2020) — Line Plot
+- Lowest Gaming Revenue by Region (2020) — Pie Chart
+- Top 10 Console Companies by Units Sold (since 1980) — Horizontal Bar Chart
+- Most Popular Console Types by Decade — Histogram
 
-- Global Highest Grossing Genre as of 2020 - Verticle Bar Chart
 
-- Top 10 Highest Grossing Game Companies Globally - Horizontal Bar Chart
-
-- Top 10 Region Consoles Sales as of 2020 - Stacked Bar Chart
-
-- Top 10 Global Console Sales as of 2020 - Line Plot Chart
-
-- Lowest Gaming Revenue by Region through 2020 - Pie Chart
-
-- Top 10 Console Companies by Units Sold since 1980" - Horizontal Bar Chart
-
-- Most Popular Console Types by Decade - Histograph
-
-Each visualization is designed with consistent formatting, color harmony, and readability in mind.
-
-### Some unique, custom Python functions that serve a clear purpose or automate repetitive tasks:
+### Custom Python Utilities
+#### The project includes several reusable helper functions:
 
     1. validate_columns()
 - Stops your workflow from breaking mid‑analysis
@@ -52,8 +51,8 @@ Each visualization is designed with consistent formatting, color harmony, and re
 
 
 
-## Overview of the Workflow
-Running the project from CSV involves four major steps:
+## CSV‑Based Workflow Overview
+This project can run entirely from CSV files without MySQL. The workflow includes four major steps:
 
     1. Set up your environment (Python, virtual environment, dependencies).
     2. Organize your project folder so notebooks and CSVs load cleanly.
@@ -62,24 +61,24 @@ Running the project from CSV involves four major steps:
 
 
     1. Environment Setup on Windows 11
-Install Python (if not installed)
-Download from: https://www.python.org/downloads/windows/
-During installation:
-• Check “Add Python to PATH”
-Create a virtual environment
+- Install Python
+Download from: https://www.python.org/downloads/windows/  
+During installation, enable: “Add Python to PATH”
 
+- Create a virtual environment
 Open Windows Terminal or PowerShell:
 cd path\to\EvolutionOfGaming
 python -m venv
 venv\Scripts\activate
 
+- Install Dependencies
 pip install pandas matplotlib seaborn numpy jupyter
 
-
-Use the notebook named "gamevolve_csv_version.ipynb". This project version is coded to use csv files.files.
+- Use the notebook named "gamevolve_csv_version.ipynb". This project version is coded to use csv files.files.
 
     2. Load CSV Files Instead of SQL
-Inside your notebook (evolution.ipynb):
+
+- Inside your notebook (evolution.ipynb):
 
 import pandas as pd
 
@@ -87,31 +86,33 @@ df = pd.read_csv("../Data/dagevolve_full.csv")
 df_consoles = pd.read_csv("../Data/gameconsoles.csv")
 df_sales = pd.read_csv("../Data/gamesales.csv")
 
-If you run into an issue loding in csv file use fullpath e.g file_path = r"C:\Users\Tonika Price\Source\Repos\EvolutionOfGaming\Data\Dagevolve_full.csv" 
- or # update path if needed.
+- If you encounter path issues
+Use a full path:
+file_path = r"C:\Users\Tonika Price\Source\Repos\EvolutionOfGaming\Data\Dagevolve_full.csv"
+df = pd.read_csv(file_path)
 
-If your CSVs have encoding issues:
+- If encoding errors occur
 df = pd.read_csv("../Data/dagevolve_full.csv", encoding="latin1") 
 
 
     3. Replace SQL Queries with Pandas Equivalents
-Example: SQL GROUP BY → pandas groupby
-SQL version:
+- SQL GROUP BY → pandas groupby
 
 SELECT Genre, SUM(Global_Sales)
 FROM dagevolve_full
 GROUP BY Genre;
 
+- PYTHON
 genre_sales = df.groupby("Genre")["Global_Sales"].sum()
 
-decade grouping
+- Decade Grouping
 df_consoles["Decade"] = pd.cut(
     df_consoles["Year"],
     bins=[1990, 1999, 2009, 2019, 2029],
     labels=["1990s", "2000s", "2010s", "2020s"]
 )
 
-pivot table
+- Pivot Table
 pivot_df = df_consoles.pivot_table(
     index="Decade",
     columns="Type",
@@ -122,9 +123,8 @@ pivot_df = df_consoles.pivot_table(
 
 
     4. Run All Visualizations Normally
-All your charts—bar charts, stacked bars, pie charts, decade trends—work exactly the same.##
-
-Example:
+- Your existing visualization code works unchanged:
+python
 import matplotlib.pyplot as plt
 
 plt.figure(figsize=(12,6))
@@ -132,22 +132,25 @@ plt.bar(genre_sales.index, genre_sales.values)
 plt.xticks(rotation=45)
 plt.show()
 
-Your existing visualization code can be reused with zero changes as long as the DataFrame names match.
+As long as DataFrame names match, all charts run seamlessly.
 
     5. Run the Notebook
 jupyter notebook
+- Open:
 notebooks/dagevolve.ipynb
 
+- Optional: Clean & Validate CSV Data
+Strip column names, remove duplicates, fill missing values
+python
+df.columns = df.columns.str.strip()
+df = df.drop_duplicates()
+df = df.fillna(0)
 
-Optional: Clean and Validate CSV Data
-The CSVs came from MySQL exports, you may need:
-df.columns = df.columns.str.strip() df = df.drop_duplicates() df = df.fillna(0) 
-
-To convert numeric columns:
+- To convert numeric columns:
 df["Global_Sales"] = pd.to_numeric(df["Global_Sales"], errors="coerce") 
 
-    Ready to Run the Full Project
-You  have a complete CSV‑based workflow that:
+- Ready to Run the Full Project
+Now have a complete CSV‑based workflow that:
     • avoids MySQL entirely
     • keeps your analysis reproducible
     • works perfectly on Windows 11
