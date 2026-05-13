@@ -1,6 +1,10 @@
 
 
 # Evolution Of Gaming
+<p align="center">
+  <img src="Visuals- Charts_mysql\Gaming Revinue Pic.png" width="600">
+</p>
+
 
 ## Overview
 This project analyzes the video‑game industry to uncover long‑term patterns in global sales, profitability, release trends, genre popularity, and company performance. Video games have shaped global entertainment for over 50 years, influencing culture, technology, and the economy. By examining industry data, this project highlights how gaming continues to evolve and what factors drive success in a competitive market.
